@@ -1,0 +1,197 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Responsive  Landing Page</title>
+
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: Arial, sans-serif;
+      }
+
+      body {
+        background: #f4f4f4;
+      }
+
+      /* NAVBAR */
+      nav {
+        position: fixed;
+        top: 0;
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 20px 50px;
+        background: transparent;
+        transition: 0.4s;
+        z-index: 1000;
+      }
+
+      nav.scrolled {
+        background: #111;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+      }
+
+      .logo {
+        color: white;
+        font-size: 28px;
+        font-weight: bold;
+      }
+
+      .nav-links {
+        display: flex;
+        list-style: none;
+      }
+
+      .nav-links li {
+        margin-left: 25px;
+      }
+
+      .nav-links a {
+        text-decoration: none;
+        color: white;
+        font-size: 18px;
+        transition: 0.3s;
+        padding: 8px 12px;
+        border-radius: 5px;
+      }
+
+      .nav-links a:hover {
+        background: #00bcd4;
+        color: #fff;
+      }
+
+      /* HERO SECTION */
+      .hero {
+        height: 100vh;
+        background:
+          linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+          url("https://img.magnific.com/premium-photo/website-application-background-design_830188-1294.jpg?w=740")
+            center/cover no-repeat;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        color: white;
+        padding: 20px;
+      }
+
+      .hero h1 {
+        font-size: 55px;
+        margin-bottom: 20px;
+      }
+
+      .hero p {
+        font-size: 20px;
+        margin-bottom: 20px;
+      }
+
+      .btn {
+        padding: 12px 25px;
+        background: #00bcd4;
+        color: white;
+        text-decoration: none;
+        border-radius: 5px;
+        transition: 0.3s;
+      }
+
+      .btn:hover {
+        background: #61787b;
+      }
+
+      /* CONTENT SECTION */
+      .content {
+        padding: 100px 50px;
+        text-align: center;
+      }
+
+      .content h2 {
+        margin-bottom: 20px;
+        font-size: 40px;
+      }
+
+      .content p {
+        font-size: 18px;
+        line-height: 1.8;
+        color: #555;
+      }
+
+      /* MOBILE RESPONSIVE */
+      @media (max-width: 768px) {
+        nav {
+          padding: 15px 20px;
+          flex-direction: column;
+        }
+
+        .nav-links {
+          margin-top: 10px;
+        }
+
+        .nav-links li {
+          margin: 0 10px;
+        }
+
+        .hero h1 {
+          font-size: 35px;
+        }
+
+        .hero p {
+          font-size: 16px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- NAVBAR -->
+    <nav id="navbar">
+      <div class="logo">SkillCraft</div>
+
+      <ul class="nav-links">
+        <li><a href="#">Home</a></li>
+        <li><a href="#">About</a></li>
+        <li><a href="#">Services</a></li>
+        <li><a href="#">Contact</a></li>
+      </ul>
+    </nav>
+
+    <!-- HERO SECTION -->
+    <section class="hero">
+      <div>
+        <h1>Responsive Landing Page</h1>
+        <p>Create beautiful and interactive web pages</p>
+        <a href="#" class="btn">Get Started</a>
+      </div>
+    </section>
+
+    <!-- CONTENT -->
+    <section class="content">
+      <h2>Welcome</h2>
+
+      <p>
+        This landing page contains a fixed interactive navigation menu. The
+        navbar changes its background color when scrolling and menu items change
+        style on hover. The webpage is fully responsive for desktop and mobile
+        screens.
+      </p>
+    </section>
+
+    <!-- JAVASCRIPT -->
+    <script>
+      // Navbar color change on scroll
+      window.addEventListener("scroll", function () {
+        const navbar = document.getElementById("navbar");
+
+        if (window.scrollY > 50) {
+          navbar.classList.add("scrolled");
+        } else {
+          navbar.classList.remove("scrolled");
+        }
+      });
+    </script>
+  </body>
+</html>
